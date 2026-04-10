@@ -1,0 +1,101 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{fancyvrb}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!60!black,
+    urlcolor=blue!60!black
+}
+
+\titleformat{\section}{\large\bfseries}{}{0em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}
+
+\title{\textbf{Chrome Dino AI}}
+\author{Riteshwar Singh}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Project Overview}
+Chrome Dino AI is a Unity-based recreation of the Chrome dinosaur runner with an integrated neuroevolution pipeline for training autonomous agents inside the Unity Editor. The project combines endless runner gameplay, procedural obstacle spawning, score tracking, audio feedback, and editor-driven AI experimentation in one codebase.
+
+\section{Key Features}
+\begin{itemize}[leftmargin=1.5em]
+    \item Classic side-scrolling Chrome Dino gameplay built in Unity.
+    \item Progressive difficulty through increasing game speed and obstacle pressure.
+    \item Persistent high score and per-session score tracking.
+    \item Neuroevolution-based AI agents implemented directly in C\#.
+    \item Parallel evaluation mode for training multiple agents at once.
+    \item In-editor overlay controls for training, playback, and debugging.
+\end{itemize}
+
+\section{Tech Stack}
+\begin{itemize}[leftmargin=1.5em]
+    \item \textbf{Engine:} Unity 6 (\texttt{6000.5.0a7})
+    \item \textbf{Language:} C\#
+    \item \textbf{Core Systems:} 2D gameplay, UI, audio, procedural spawning, neuroevolution
+\end{itemize}
+
+\section{Project Structure}
+\begin{itemize}[leftmargin=1.5em]
+    \item \texttt{Assets/Scenes/Game.unity}: main gameplay scene.
+    \item \texttt{Assets/Scripts/}: gameplay systems such as player control, spawner logic, ground movement, and score handling.
+    \item \texttt{Assets/Scripts/AI/Neuroevolution/}: AI training code including genome representation, controller logic, trainer orchestration, and parallel-agent utilities.
+    \item \texttt{ProjectSettings/}: Unity project configuration.
+\end{itemize}
+
+\section{How To Run}
+\subsection{Play The Game}
+\begin{enumerate}[leftmargin=1.5em]
+    \item Open the project in Unity Hub.
+    \item Use Unity Editor version \texttt{6000.5.0a7} if possible.
+    \item Open \texttt{Assets/Scenes/Game.unity}.
+    \item Press \texttt{Play} in the Unity Editor.
+\end{enumerate}
+
+\subsection{Use The AI Trainer}
+\begin{enumerate}[leftmargin=1.5em]
+    \item Open the main game scene in Unity.
+    \item Add or select the object containing \texttt{NeuroEvolutionTrainer}.
+    \item Enable training from the inspector or the in-game overlay.
+    \item Adjust population size, mutation settings, and parallel evaluation as needed.
+    \item Let the trainer evolve agents, then enable the best genome for autonomous play.
+\end{enumerate}
+
+\section{AI Notes}
+The AI system uses a lightweight neuroevolution workflow rather than image-based reinforcement learning. Fitness is shaped using survival time, score progress, and obstacle clears. The trainer can evaluate either one genome at a time or a full population in parallel, which makes experimentation faster during development.
+
+\section{Demo Video Placeholder}
+\noindent\fbox{%
+    \parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+        \textbf{Demo video:} Add the final hosted demo video link here before submission.\\[0.5em]
+        Suggested format: \texttt{\textbackslash href\{https://your-demo-link\}\{Watch the demo video\}}\\[0.5em]
+        Suggested note: include a short caption describing gameplay, AI behavior, and training highlights.
+    }%
+}
+
+\section{Future Improvements}
+\begin{itemize}[leftmargin=1.5em]
+    \item Export trained models and compare generations visually.
+    \item Add charts for fitness trends across generations.
+    \item Introduce more obstacle variants and richer environment states.
+    \item Package a standalone build alongside the Unity project.
+\end{itemize}
+
+\section{Repository Link}
+After the GitHub repository is created, add the public repository URL here for Overleaf submissions.
+
+\vfill
+\noindent\textbf{Author:} Riteshwar Singh
+
+\end{document}
