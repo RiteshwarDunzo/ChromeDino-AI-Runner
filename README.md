@@ -144,26 +144,6 @@ Evaluation, selection, crossover, and mutation repeat for many generations. Over
 
 When `playWithBestGenome` is enabled, the dino uses the strongest saved genome for autonomous play.
 
-## Training Notes
-
-- Training runs entirely inside the Unity Editor.
-- Deterministic spawning can be enabled per generation so genomes are compared on similar obstacle sequences.
-- Parallel evaluation can spawn many dino agents at once for faster iteration.
-- Birds are currently skipped by the spawner.
-- The best genome is saved using `PlayerPrefs`.
-
-
-
-Replace the file names with your actual image and video paths.
-
-## Future Improvements
-
-- Save multiple checkpoints instead of only the best genome
-- Add charts for per-generation fitness trends
-- Compare sequential versus parallel evaluation results
-- Reintroduce more obstacle variety such as birds
-- Export trained genomes in a reusable format
-
 ## Author
 
 Riteshwar Singh
