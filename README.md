@@ -1,7 +1,5 @@
 
 
-https://github.com/user-attachments/assets/64fa2652-8c8c-4f1c-8c4f-e07bd0edcfa2
-
 # Chrome Dino AI
 
 A Unity recreation of the Chrome dinosaur runner with an in-editor neuroevolution system that learns when to jump using a genetic algorithm.
@@ -21,6 +19,8 @@ This project combines:
 - Neuroevolution trainer built directly into the Unity scene
 - Parallel population evaluation for faster experimentation
 - Overlay controls for training, playback, and debugging
+  
+https://github.com/user-attachments/assets/85606dd8-2a27-4fe2-b521-bbea3fea556c
 
 ## Tech Stack
 
