@@ -14,21 +14,22 @@ This project combines:
 - Playable Chrome Dino-style runner in Unity
 - Increasing difficulty as game speed rises over time
 - Persistent high score plus current session score
-- Neuroevolution trainer built into the Unity scene
+- Neuroevolution trainer built directly into the Unity scene
 - Parallel population evaluation for faster experimentation
-- Overlay controls for starting, stopping, and inspecting training
+- Overlay controls for training, playback, and debugging
 
 ## Tech Stack
 
 - Unity 6 (`6000.5.0a7`)
 - C#
-- Built-in Unity gameplay, UI, audio, and editor tooling
+- Unity gameplay, UI, audio, and editor tooling
 
 ## Project Structure
 
-- `Assets/Scenes/Game.unity` - main scene
-- `Assets/Scripts/` - gameplay systems like player movement, scoring, spawning, and game flow
+- `Assets/Scenes/Game.unity` - main gameplay scene
+- `Assets/Scripts/` - gameplay systems such as player movement, scoring, spawning, and game flow
 - `Assets/Scripts/AI/Neuroevolution/` - genome, controller, trainer, and training helpers
+- `ProjectSettings/` - Unity project configuration
 - `reporting/` - generated diagrams and report assets
 
 ## How To Run
@@ -39,22 +40,22 @@ This project combines:
 2. Use Unity `6000.5.0a7` if possible.
 3. Open `Assets/Scenes/Game.unity`.
 4. Press Play in the Unity Editor.
-5. Use the normal jump input (`Space` / Unity's default `Jump` binding) to avoid obstacles.
+5. Use `Space` or Unity's default `Jump` input to avoid obstacles.
 
 ### Run the AI
 
-The AI system is already implemented in the project. It does not need Python or ML-Agents.
+The AI system is already implemented in the project. It does not require Python or ML-Agents.
 
 1. Open `Assets/Scenes/Game.unity`.
-2. Select the GameObject that has the `NeuroEvolutionTrainer` component.
+2. Select the GameObject that contains `NeuroEvolutionTrainer`.
 3. Choose one of these modes in the Inspector:
-   - `trainingEnabled` to evolve genomes
-   - `playWithBestGenome` to let the best saved genome control the dino
+   - Enable `trainingEnabled` to evolve genomes
+   - Enable `playWithBestGenome` to let the best saved genome control the dino
 4. Press Play.
-5. Use the on-screen overlay to start or stop training.
+5. Use the in-game overlay to start or stop training.
 6. Press `F8` to toggle the training overlay if needed.
 
-### Suggested training setup
+### Suggested training settings
 
 Good starting values from the current trainer:
 
@@ -106,7 +107,7 @@ At the start of training, the trainer creates a population of random genomes. Ea
 
 Fitness is shaped mainly by:
 
-- survival time / score gained
+- survival time and score progress
 - obstacles cleared
 - a small tie-break bonus for lasting longer
 
@@ -148,16 +149,47 @@ When `playWithBestGenome` is enabled, the dino uses the strongest saved genome f
 - Training runs entirely inside the Unity Editor.
 - Deterministic spawning can be enabled per generation so genomes are compared on similar obstacle sequences.
 - Parallel evaluation can spawn many dino agents at once for faster iteration.
-- Birds are currently skipped by the spawner during training and gameplay.
+- Birds are currently skipped by the spawner.
+- The best genome is saved using `PlayerPrefs`.
 
-## Why This Approach
+## Demo Video
 
-Neuroevolution is a good fit here because:
+Add your final demo here using one of these options.
 
-- the action space is small
-- the game state is easy to represent numerically
-- it is simple to implement directly in Unity
-- it gives fast visual feedback while experimenting
+### Option 1: Link to a hosted video
+
+Replace this with your real link:
+
+`[Watch the demo video](https://your-video-link.com)`
+
+### Option 2: Reference your MP4 in the repo
+
+If you add your video file to the repository, update this section with its path:
+
+- Demo file: `demo.mp4`
+- Example path in repo: `assets/demo.mp4`
+
+GitHub does not reliably play local MP4 files inline inside a README, so the usual approach is:
+
+1. Add the MP4 to the repo or a release.
+2. Link to it from the README.
+3. Optionally add a screenshot thumbnail that links to the video.
+
+Example:
+
+```md
+[Download or watch the demo video](assets/demo.mp4)
+```
+
+### Option 3: Clickable thumbnail
+
+If you add a preview image, you can make it clickable:
+
+```md
+[![Demo Video Preview](assets/demo-thumbnail.png)](assets/demo.mp4)
+```
+
+Replace the file names with your actual image and video paths.
 
 ## Future Improvements
 
