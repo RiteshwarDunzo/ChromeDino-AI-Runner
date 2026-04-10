@@ -152,42 +152,7 @@ When `playWithBestGenome` is enabled, the dino uses the strongest saved genome f
 - Birds are currently skipped by the spawner.
 - The best genome is saved using `PlayerPrefs`.
 
-## Demo Video
 
-Add your final demo here using one of these options.
-
-### Option 1: Link to a hosted video
-
-Replace this with your real link:
-
-`[Watch the demo video](https://your-video-link.com)`
-
-### Option 2: Reference your MP4 in the repo
-
-If you add your video file to the repository, update this section with its path:
-
-- Demo file: `demo.mp4`
-- Example path in repo: `assets/demo.mp4`
-
-GitHub does not reliably play local MP4 files inline inside a README, so the usual approach is:
-
-1. Add the MP4 to the repo or a release.
-2. Link to it from the README.
-3. Optionally add a screenshot thumbnail that links to the video.
-
-Example:
-
-```md
-[Download or watch the demo video](assets/demo.mp4)
-```
-
-### Option 3: Clickable thumbnail
-
-If you add a preview image, you can make it clickable:
-
-```md
-[![Demo Video Preview](assets/demo-thumbnail.png)](assets/demo.mp4)
-```
 
 Replace the file names with your actual image and video paths.
 
